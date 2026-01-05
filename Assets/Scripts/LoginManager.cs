@@ -26,6 +26,8 @@ public class LoginManager : MonoBehaviour
     private async Task Start()
     {
         /*
+        // Automatic Anonymous Sign in
+        
         if (!AuthenticationService.Instance.SessionTokenExists)
         {
             Debug.Log("Session Token not found");
