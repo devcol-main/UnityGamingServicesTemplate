@@ -19,6 +19,8 @@ public class LoginManager : MonoBehaviour
     // need this token to authenticate the player with Unity Gaming Services
     private string m_GooglePlayGamesToken;
 
+    public Action PlayerSignedIn;
+
     private async void Awake()
     {
 
@@ -34,15 +36,19 @@ public class LoginManager : MonoBehaviour
         InitializeFacebook();
 
         //
-        if (UnityServices.State == ServicesInitializationState.Uninitialized)
+        if (UnityServices.State == ServicesInitializationState.Initialized)
         {
-            Debug.Log("Unity Gaming Services Initalizing");
-            await UnityServices.InitializeAsync();
+            UnitySignInSubscription();
+        }
+        else
+        {
+            UnityServices.Initialized += UnitySignInSubscription;
         }
 
+    }
+    private void UnitySignInSubscription()
+    {
         PlayerAccountService.Instance.SignedIn += SignInOrLinkWithUnity;
-
-
     }
 
     private async Task Start()
@@ -79,6 +85,8 @@ public class LoginManager : MonoBehaviour
 
             // Shows how to get the playerID
             Debug.Log($"PlayerID: {AuthenticationService.Instance.PlayerId}");
+
+            PlayerSignedIn.Invoke();
 
         }
         catch (AuthenticationException ex)
@@ -469,11 +477,13 @@ public class LoginManager : MonoBehaviour
     }
 
 
-
-
-
 #endif
 
     #endregion
 
+    private void Oisable()
+    {
+        PlayerAccountService.Instance.SignedIn -= SignInOrLinkWithUnity;
+        UnityServices.Initialized -= UnitySignInSubscription;       
+    }
 }

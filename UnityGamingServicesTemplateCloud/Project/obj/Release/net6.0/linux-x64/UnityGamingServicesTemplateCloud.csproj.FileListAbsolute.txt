@@ -1,0 +1,13 @@
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/bin/Release/net6.0/linux-x64/UnityGamingServicesTemplateCloud.deps.json
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/bin/Release/net6.0/linux-x64/UnityGamingServicesTemplateCloud.dll
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/bin/Release/net6.0/linux-x64/UnityGamingServicesTemplateCloud.pdb
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/linux-x64/UnityGamingServicesTemplateCloud.csproj.AssemblyReference.cache
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/linux-x64/UnityGamingServicesTemplateCloud.GeneratedMSBuildEditorConfig.editorconfig
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/linux-x64/UnityGamingServicesTemplateCloud.AssemblyInfoInputs.cache
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/linux-x64/UnityGamingServicesTemplateCloud.AssemblyInfo.cs
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/linux-x64/UnityGamingServicesTemplateCloud.csproj.CoreCompileInputs.cache
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/linux-x64/UnityGamingServicesTemplateCloud.sourcelink.json
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/linux-x64/UnityGamingServicesTemplateCloud.dll
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/linux-x64/refint/UnityGamingServicesTemplateCloud.dll
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/linux-x64/UnityGamingServicesTemplateCloud.pdb
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/linux-x64/ref/UnityGamingServicesTemplateCloud.dll

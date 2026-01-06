@@ -1,0 +1,13 @@
+/var/folders/g9/cxh2mj4923x96xnhsjzlbl1w0000gn/T/UnityGamingServicesTemplateCloud/module-compilation-cross-platform/UnityGamingServicesTemplateCloud.dll
+/var/folders/g9/cxh2mj4923x96xnhsjzlbl1w0000gn/T/UnityGamingServicesTemplateCloud/module-compilation-cross-platform/UnityGamingServicesTemplateCloud.deps.json
+/var/folders/g9/cxh2mj4923x96xnhsjzlbl1w0000gn/T/UnityGamingServicesTemplateCloud/module-compilation-cross-platform/UnityGamingServicesTemplateCloud.pdb
+/var/folders/g9/cxh2mj4923x96xnhsjzlbl1w0000gn/T/UnityGamingServicesTemplateCloud/module-compilation-cross-platform/Unity.Services.CloudCode.Apis.dll
+/var/folders/g9/cxh2mj4923x96xnhsjzlbl1w0000gn/T/UnityGamingServicesTemplateCloud/module-compilation-cross-platform/Unity.Services.CloudCode.Core.dll
+/var/folders/g9/cxh2mj4923x96xnhsjzlbl1w0000gn/T/UnityGamingServicesTemplateCloud/module-compilation-cross-platform/Google.Protobuf.dll
+/var/folders/g9/cxh2mj4923x96xnhsjzlbl1w0000gn/T/UnityGamingServicesTemplateCloud/module-compilation-cross-platform/Grpc.Core.Api.dll
+/var/folders/g9/cxh2mj4923x96xnhsjzlbl1w0000gn/T/UnityGamingServicesTemplateCloud/module-compilation-cross-platform/Grpc.Net.Client.dll
+/var/folders/g9/cxh2mj4923x96xnhsjzlbl1w0000gn/T/UnityGamingServicesTemplateCloud/module-compilation-cross-platform/Grpc.Net.Common.dll
+/var/folders/g9/cxh2mj4923x96xnhsjzlbl1w0000gn/T/UnityGamingServicesTemplateCloud/module-compilation-cross-platform/JsonSubTypes.dll
+/var/folders/g9/cxh2mj4923x96xnhsjzlbl1w0000gn/T/UnityGamingServicesTemplateCloud/module-compilation-cross-platform/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/var/folders/g9/cxh2mj4923x96xnhsjzlbl1w0000gn/T/UnityGamingServicesTemplateCloud/module-compilation-cross-platform/Microsoft.Extensions.Logging.Abstractions.dll
+/var/folders/g9/cxh2mj4923x96xnhsjzlbl1w0000gn/T/UnityGamingServicesTemplateCloud/module-compilation-cross-platform/Newtonsoft.Json.dll

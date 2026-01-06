@@ -1,0 +1,13 @@
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/bin/Release/net6.0/any/UnityGamingServicesTemplateCloud.deps.json
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/bin/Release/net6.0/any/UnityGamingServicesTemplateCloud.dll
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/bin/Release/net6.0/any/UnityGamingServicesTemplateCloud.pdb
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/any/UnityGamingServicesTemplateCloud.csproj.AssemblyReference.cache
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/any/UnityGamingServicesTemplateCloud.GeneratedMSBuildEditorConfig.editorconfig
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/any/UnityGamingServicesTemplateCloud.AssemblyInfoInputs.cache
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/any/UnityGamingServicesTemplateCloud.AssemblyInfo.cs
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/any/UnityGamingServicesTemplateCloud.csproj.CoreCompileInputs.cache
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/any/UnityGamingServicesTemplateCloud.sourcelink.json
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/any/UnityGamingServicesTemplateCloud.dll
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/any/refint/UnityGamingServicesTemplateCloud.dll
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/any/UnityGamingServicesTemplateCloud.pdb
+/Users/in9/Programmings/Unity/0.TEMPLATES/UnityGamingServicesTemplate/UnityGamingServicesTemplateCloud/Project/obj/Release/net6.0/any/ref/UnityGamingServicesTemplateCloud.dll
