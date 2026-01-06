@@ -25,6 +25,12 @@ using UnityEngine.UI;
 using Facebook.Unity;
 using System;
 
+// for replacing 
+// LoadPictureFromUrl()
+//WWW www = new WWW(url);
+//yield return www;
+using UnityEngine.Networking;
+
 public class FBWindowsLoginManager : MonoBehaviour
 {
     public FBWindowsLogsManager Logger;
@@ -142,17 +148,40 @@ public class FBWindowsLoginManager : MonoBehaviour
         });
     }
 
+    // obsolete
+    // IEnumerator LoadPictureFromUrl(string url, RawImage itemImage)
+    // {
+    //     Texture2D UserPicture = new Texture2D(32, 32);
+
+    //     WWW www = new WWW(url);
+    //     yield return www;
+
+    //     www.LoadImageIntoTexture(UserPicture);
+    //     www.Dispose();
+    //     www = null;
+
+    //     itemImage.texture = UserPicture;
+    // }
     IEnumerator LoadPictureFromUrl(string url, RawImage itemImage)
     {
-        Texture2D UserPicture = new Texture2D(32, 32);
+        // Use UnityWebRequestTexture for better memory management
+        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(url))
+        {
+            // Wait for the download to complete
+            yield return request.SendWebRequest();
 
-        WWW www = new WWW(url);
-        yield return www;
+            if (request.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("Error downloading image: " + request.error);
+            }
+            else
+            {
+                // DownloadHandlerTexture automatically handles the Texture2D creation
+                Texture2D downloadedTexture = DownloadHandlerTexture.GetContent(request);
 
-        www.LoadImageIntoTexture(UserPicture);
-        www.Dispose();
-        www = null;
-
-        itemImage.texture = UserPicture;
+                // Apply the texture to your RawImage
+                itemImage.texture = downloadedTexture;
+            }
+        }
     }
 }

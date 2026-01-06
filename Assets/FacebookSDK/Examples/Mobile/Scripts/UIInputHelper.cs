@@ -30,7 +30,8 @@ public class UIInputHelper : MonoBehaviour
 
     private void Start()
     {
-        EventSystem sceneEventSystem = FindObjectOfType<EventSystem>();
+        //EventSystem sceneEventSystem = FindObjectOfType<EventSystem>();
+        EventSystem sceneEventSystem = FindAnyObjectByType<EventSystem>();
         isOldEventSystem = !(sceneEventSystem == null);
         if (!isOldEventSystem)
         {

@@ -96,11 +96,41 @@ namespace Facebook.Unity.Example
             // Retrieve packaged data via `UnityWebRequest`
             var request = UnityWebRequest.Get(path);
             request.SendWebRequest();
-            while (!request.isDone) {
-                if (request.isNetworkError || request.isHttpError) {
-                    break;
+            while (!request.isDone)
+            {
+                // obsolute
+                // if (request.isNetworkError || request.isHttpError)
+                // {
+                //     break;
+                // }
+                //
+
+                switch (request.result)
+                {
+                    case UnityWebRequest.Result.ConnectionError:
+                        // Replaces isNetworkError
+                        Debug.LogError("Network/Connection Error: " + request.error);
+                        break;
+
+                    case UnityWebRequest.Result.ProtocolError:
+                        // Replaces isHttpError (HTTP 400+)
+                        Debug.LogError("HTTP/Protocol Error: " + request.error);
+                        break;
+
+                    case UnityWebRequest.Result.DataProcessingError:
+                        // For errors like malformed data or failed post-processing
+                        Debug.LogError("Data Processing Error: " + request.error);
+                        break;
+
+                    case UnityWebRequest.Result.Success:
+                        // Request completed successfully
+                        Debug.Log("Success: " + request.downloadHandler.text);
+                        break;
                 }
+                //
             }
+
+
             data = request.downloadHandler.data;
 
             // Write the data so it can be uploaded

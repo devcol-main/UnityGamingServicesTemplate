@@ -1617,7 +1617,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2133761775}
         m_TargetAssemblyTypeName: LoginManager, Assembly-CSharp
-        m_MethodName: StartAnonymusSignIn
+        m_MethodName: StartFacebookSignIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
