@@ -8,11 +8,29 @@ using System.Collections.Generic;
 
 using Facebook.Unity;
 
+#if UNITY_ANDROID
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
+#endif
+
 public class LoginManager : MonoBehaviour
 {
-    
+    // to store the serverside authentication token received from Google Play Games
+    // need this token to authenticate the player with Unity Gaming Services
+    private string m_GooglePlayGamesToken;
+
     private async void Awake()
     {
+
+#if UNITY_ANDROID
+        PlayGamesPlatform.DebugLogEnabled = true;
+        PlayGamesPlatform.Activate();
+
+        LoginGooglePlayGames();
+#endif
+
+
+        //
         InitializeFacebook();
 
         //
@@ -215,8 +233,8 @@ public class LoginManager : MonoBehaviour
     }
 
     #region Facebook
-        
-    
+
+
     private void InitializeFacebook()
     {
         if (!FB.IsInitialized)
@@ -268,7 +286,7 @@ public class LoginManager : MonoBehaviour
         FB.LogInWithReadPermissions(perms, async result =>
         {
             if (FB.IsLoggedIn)
-            {              
+            {
                 //Token = AccessToken.CurrentAccessToken.TokenString;
                 //Debug.Log($"Facebook Login token: {Token}");
 
@@ -278,7 +296,7 @@ public class LoginManager : MonoBehaviour
 
                 // if the player is not signed in with Unity authentication, they're a new player, 
                 // so they're signing into authentication using their Facebook identity
-                if(!AuthenticationService.Instance.IsSignedIn)
+                if (!AuthenticationService.Instance.IsSignedIn)
                 {
                     await SignInWithFacebookAsync(facebookAccessToken);
                 }
@@ -295,7 +313,7 @@ public class LoginManager : MonoBehaviour
                 //Error = "User cancelled login";
                 Debug.Log("[Facebook Login] User cancelled login");
 
-                
+
             }
         });
     }
@@ -319,7 +337,7 @@ public class LoginManager : MonoBehaviour
     private async Task LinkWithFacebookAsync(string accessToken)
     {
         try
-        {            
+        {
             await AuthenticationService.Instance.LinkWithFacebookAsync(accessToken);
             Debug.Log("Linked with Facebook");
         }
@@ -332,10 +350,130 @@ public class LoginManager : MonoBehaviour
             Debug.LogException(ex);
         }
     }
-    
 
 
-    #endregion 
 
+    #endregion
+
+    #region Google Play Games
+
+#if UNITY_ANDROID
+
+    // (silent) automactic Login from Awake
+    public void LoginGooglePlayGames()
+    {
+        PlayGamesPlatform.Instance.Authenticate((status) =>
+        {
+            if (status == SignInStatus.Success)
+            {
+                Debug.Log("Login with Google Play games successful.");
+
+                PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
+                {
+                    Debug.Log("Authorization code: " + code);
+                    m_GooglePlayGamesToken = code;
+                    // This token serves as an example to be used for SignInWithGooglePlayGames
+                });
+            }
+            else
+            {
+
+                Debug.LogWarning($"Google Play Games login Unsuccessful, status: {status}");
+            }
+        });
+    }
+
+
+    // when player clicks the sign-in button. however it should be hidden 
+    // Player should be signed in with Google Play Games at the start
+    public void StartSignInWithGooglePlayGames()
+    {
+        if (!PlayGamesPlatform.Instance.IsAuthenticated())
+        {
+            Debug.LogWarning("Not yet authenticated with Google Play Games -- attempting login again");
+            LoginGooglePlayGames();
+            return;
+        }
+
+        SignInOrLinkWithGooglePlayGames();
+    }
+
+    // check whether it's new player or existing player who wants to connect their Google account  
+    private async void SignInOrLinkWithGooglePlayGames()
+    {
+        if (string.IsNullOrEmpty(m_GooglePlayGamesToken))
+        {
+            Debug.LogWarning("Authorization code is null or empty");
+            return;
+        }
+
+        if (!AuthenticationService.Instance.IsSignedIn)
+        {
+            await SignInWithGooglePlayGamesAsync(m_GooglePlayGamesToken);
+        }
+        else
+        {
+            await LinkWithGooglePlayGamesAsync(m_GooglePlayGamesToken);
+        }
+
+    }
+
+    // for new player
+    private async Task SignInWithGooglePlayGamesAsync(string authCode)
+    {
+        try
+        {
+            await AuthenticationService.Instance.SignInWithGooglePlayGamesAsync(authCode);
+            Debug.Log("SignIn is successful.");
+        }
+        catch (AuthenticationException ex)
+        {
+            // Compare error code to AuthenticationErrorCodes
+            // Notify the player with the proper error message
+            Debug.LogException(ex);
+        }
+        catch (RequestFailedException ex)
+        {
+            // Compare error code to CommonErrorCodes
+            // Notify the player with the proper error message
+            Debug.LogException(ex);
+        }
+    }
+
+    // for existing player
+    private async Task LinkWithGooglePlayGamesAsync(string authCode)
+    {
+        try
+        {
+            await AuthenticationService.Instance.LinkWithGooglePlayGamesAsync(authCode);
+            Debug.Log("Link is successful.");
+        }
+        catch (AuthenticationException ex) when (ex.ErrorCode == AuthenticationErrorCodes.AccountAlreadyLinked)
+        {
+            // Prompt the player with an error message.
+            Debug.LogError("This user is already linked with another account. Log in instead.");
+        }
+
+        catch (AuthenticationException ex)
+        {
+            // Compare error code to AuthenticationErrorCodes
+            // Notify the player with the proper error message
+            Debug.LogException(ex);
+        }
+        catch (RequestFailedException ex)
+        {
+            // Compare error code to CommonErrorCodes
+            // Notify the player with the proper error message
+            Debug.LogException(ex);
+        }
+    }
+
+
+
+
+
+#endif
+
+    #endregion
 
 }
