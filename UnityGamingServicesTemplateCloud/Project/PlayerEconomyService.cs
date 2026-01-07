@@ -287,7 +287,8 @@ public class PlayerEconomyService
     }  
 
 
-    private async Task InitializeInventory(IExecutionContext context, IGameApiClient gameApiClient)
+    [CloudCodeFunction("InitializeInventory")]
+    public async Task InitializeInventory(IExecutionContext context, IGameApiClient gameApiClient)
     {
         var startingItems = new Dictionary<string, int>
         {

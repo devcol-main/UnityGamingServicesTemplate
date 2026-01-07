@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using GooglePlayGames.BasicApi;
 using Newtonsoft.Json;
+using Unity.Services.CloudCode.GeneratedBindings.UnityGamingServicesTemplateCloud;
 
 public class PlayerDataManager : MonoBehaviour
 {
@@ -15,9 +16,11 @@ public class PlayerDataManager : MonoBehaviour
     //
     public LoginManager LoginManager;
     public string PlayerName;
-    public PlayerDataManager PlayerDataLocal;
+    //public PlayerDataManager PlayerDataLocal;
+    public PlayerData PlayerDataLocal;
 
-    public event Action<PlayerDataManager> PlayerDataUpdated;
+    //public event Action<PlayerDataManager> PlayerDataUpdated;
+    public event Action<PlayerData> PlayerDataUpdated;
 
     //
     private const int minNameLength = 3;
@@ -49,6 +52,7 @@ public class PlayerDataManager : MonoBehaviour
             // Debug.Log($"{PlayerName} has {potionAmount} health potions");
 
             var playerDataResponse = await m_Bindings.HandlePlayerSignIn();
+            
 
             PlayerDataLocal = playerDataResponse.PlayerData;
             PlayerDataUpdated?.Invoke(PlayerDataLocal);

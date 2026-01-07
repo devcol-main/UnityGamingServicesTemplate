@@ -22,5 +22,15 @@ namespace Unity.Services.CloudCode.GeneratedBindings
                 {
                 });
         }
+
+        public async Task InitializeInventory()
+        {
+            await k_Service.CallModuleEndpointAsync(
+                "UnityGamingServicesTemplateCloud",
+                "InitializeInventory",
+                new Dictionary<string, object>()
+                {
+                });
+        }
     }
 }
