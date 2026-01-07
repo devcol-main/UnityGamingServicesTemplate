@@ -22,6 +22,7 @@ namespace UnityGamingServicesTemplateCloud
             config.Dependencies.AddSingleton(GameApiClient.Create());
 
             config.Dependencies.AddSingleton<PlayerEconomyService>();
+            config.Dependencies.AddSingleton<PlayerDataService>();
         }
     }
 }

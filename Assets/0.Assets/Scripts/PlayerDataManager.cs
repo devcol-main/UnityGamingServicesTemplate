@@ -15,6 +15,8 @@ public class PlayerDataManager : MonoBehaviour
 
     //
     public LoginManager LoginManager;
+    [SerializeField]
+    private PlayerEconomyManager m_PlayerEconomyManager;
     public string PlayerName;
     //public PlayerDataManager PlayerDataLocal;
     public PlayerData PlayerDataLocal;
@@ -51,11 +53,13 @@ public class PlayerDataManager : MonoBehaviour
             // var potionAmount = await m_EconomyServiceBindings.GetHealthPotionAmount();
             // Debug.Log($"{PlayerName} has {potionAmount} health potions");
 
-            var playerDataResponse = await m_Bindings.HandlePlayerSignIn();
-            
+            var playerDataResponse = await m_Bindings.HandlePlayerSignIn();            
 
             PlayerDataLocal = playerDataResponse.PlayerData;
             PlayerDataUpdated?.Invoke(PlayerDataLocal);
+
+            m_PlayerEconomyManager.HandleEconomyUpdate(playerDataResponse.EconomyData);
+
             LogResponse(playerDataResponse);
 
         }
