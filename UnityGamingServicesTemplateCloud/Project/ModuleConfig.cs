@@ -20,6 +20,8 @@ namespace UnityGamingServicesTemplateCloud
         public void Setup(ICloudCodeConfig config)
         {
             config.Dependencies.AddSingleton(GameApiClient.Create());
+
+            config.Dependencies.AddSingleton<PlayerEconomyService>();
         }
     }
 }

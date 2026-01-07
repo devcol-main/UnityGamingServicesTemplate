@@ -6,8 +6,14 @@ using UnityEngine;
 
 public class GameInitializer : MonoBehaviour
 {
-    private void Awake()
+    private async void Awake()
     {
+        if (UnityServices.State == ServicesInitializationState.Uninitialized)
+        {
+            Debug.Log("Unity Gaming Services Initalizing");
+            await UnityServices.InitializeAsync();
+        }
+
         //obsolete
         //AnalyticsService.Instance.StartDataCollection();
         EndUserConsent.SetConsentState(new ConsentState {

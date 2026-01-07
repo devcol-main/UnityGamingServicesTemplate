@@ -35,6 +35,13 @@ public class LoginManager : MonoBehaviour
         //
         InitializeFacebook();
 
+        // moved to GameInitialier.cs        
+        // if (UnityServices.State == ServicesInitializationState.Uninitialized)
+        // {
+        //     Debug.Log("Unity Gaming Services Initalizing");
+        //     await UnityServices.InitializeAsync();
+        // }
+
         //
         if (UnityServices.State == ServicesInitializationState.Initialized)
         {
@@ -51,9 +58,12 @@ public class LoginManager : MonoBehaviour
         PlayerAccountService.Instance.SignedIn += SignInOrLinkWithUnity;
     }
 
+
     private async Task Start()
+    //private async void Start()
     {
-        /*
+        Debug.Log("Start at LoginManager");
+
         // Automatic Anonymous Sign in
 
         if (!AuthenticationService.Instance.SessionTokenExists)
@@ -64,7 +74,7 @@ public class LoginManager : MonoBehaviour
 
         Debug.Log("Returning player signing in");
         await SignInAnonymouslyAsync();
-        */
+        
     }
 
     // for button
@@ -77,6 +87,7 @@ public class LoginManager : MonoBehaviour
     {
         try
         {
+            //Debug.Log("Tries to Signning in anonymously");
             // if wants to use it with button, need to created func -> StartAnonymusSignIn()
             // b/c Unity's button requires a void return type
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
