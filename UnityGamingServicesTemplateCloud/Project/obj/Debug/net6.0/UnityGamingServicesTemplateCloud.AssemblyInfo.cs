@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UnityGamingServicesTemplateCloud")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c03338eca9ca48acdd4c6b923ff1d6268012dce8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed974e7beabd8fb5c6103b6bc59d4dc4ff0b1b34")]
 [assembly: System.Reflection.AssemblyProductAttribute("UnityGamingServicesTemplateCloud")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UnityGamingServicesTemplateCloud")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
